@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PizzaController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Pizza's</h1>
+        <table class="table">
+         <tr>
+             <th>naam</th>
+             <th>prijs</th>
+         </tr>
+
+        {% for pizza in pizzas %}
+            <tr>
+                <td>{{ pizza.name }}</td>
+                <td>{{ pizza.price }}</td>
+            </tr>
+        {% endfor %}
+
+        </table>
+
+</div>
+{% endblock %}
+
