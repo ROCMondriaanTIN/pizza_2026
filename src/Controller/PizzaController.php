@@ -22,5 +22,14 @@ final class PizzaController extends AbstractController
             'pizzas'=>$pizzas
         ]);
     }
+    #[Route('/pizza/new', name: 'app_pizza_new')]
+    public function new(EntityManagerInterface $entityManager): Response
+    {
+        $pizza=new Pizza();
+        $form=$this->createForm(PizzaType::class,$pizza);
 
+        return $this->render('pizza/new.html.twig',[
+            'form'=>$form
+        ]);
+    }
 }
